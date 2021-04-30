@@ -11,28 +11,30 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\PluginCommand;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\player\PlayerJoinEvent;
-
+use pocketmine\utils\Config;
+	
 class Main extends PluginBase implements Listener
 {
 
+public $cfg;	
+	
 public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->eco = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
+	@mkdir($this->getDataFolder());
+        $this->cfg = $this->getConfig();
+        $this->saveDefaultConfig();
     }
 
     public function onJoin(PlayerJoinEvent $event){
            $player = $event->getPlayer();
 
-           $slot5 = Item::get(345, 0, 1);
+           $slot$this->cfg->get("slot")= Item::get(345, 0, 1);
 
-           $slot2 = Item::get(421, 0, 1);
-     $slot5->setCustomName("§clist-serveur");
+     $slot$this->cfg->get("slot")->setCustomName("$this->cfg->get("nom")");
           
-$slot2->setCustomName("§a/nick");
            $player->getInventory()->ClearAll();
-           $player->getInventory()->setItem(0, $slot5);
-
-$player->getInventory()->setItem(0, $slot2);
+           $player->getInventory()->setItem(0, $slot$this->cfg->get("slot"));
     }
 
     public function onInteract(PlayerInteractEvent $event){
@@ -44,12 +46,7 @@ $player->getInventory()->setItem(0, $slot2);
               $this->serveurlist($player);
               return true;
            }
-
-           if($item->getId() == 421){
-              $event->setCancelled();
-              $cmd = "nick on";
-              return true;
-           }
+	    
     }
 
 	public function serveurlist(Player $sender){
@@ -61,11 +58,11 @@ $player->getInventory()->setItem(0, $slot2);
 		    }
 			switch($result){
 				case 0:
-				$cmd = "transferserver RubydiumFaction.mcpe.eu 19595 on";
+				$cmd = "transferserver $this->cfg->get("stickFremove") $this->cfg->get("stickFremove") on";
 				$this->getServer()->getCommandMap()->dispatch($sender, $cmd);
 				break;
 				case 1:
-				$cmd = "transferserver RubydiumFaction2.mcpe.eu 19320 on";
+				$cmd = "transferserver $this->cfg->get("stickFremove") 19320 on";
 				$this->getServer()->getCommandMap()->dispatch($sender, $cmd);
 				break;
 				case 2:
@@ -84,4 +81,4 @@ $player->getInventory()->setItem(0, $slot2);
 		$form->sendToPlayer($sender);
 			return $form;
 	} 
-} 
+}
