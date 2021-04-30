@@ -58,26 +58,26 @@ public function onEnable(){
 		    }
 			switch($result){
 				case 0:
-				$cmd = "transferserver $this->cfg->get("stickFremove") $this->cfg->get("stickFremove") on";
+				$cmd = "transferserver $this->cfg->get("ip1") $this->cfg->get("port1") on";
 				$this->getServer()->getCommandMap()->dispatch($sender, $cmd);
 				break;
 				case 1:
-				$cmd = "transferserver $this->cfg->get("stickFremove") 19320 on";
+				$cmd = "transferserver $this->cfg->get("ip2") $this->cfg->get("port2") on";
 				$this->getServer()->getCommandMap()->dispatch($sender, $cmd);
 				break;
 				case 2:
-				$cmd = "transferserver RubydiumMinage.mcpe.eu 19134 on";
+				$cmd = "transferserver $this->cfg->get("ip3") $this->cfg->get("port3") on";
 				
 				$this->getServer()->getCommandMap()->dispatch($sender, $cmd);
 				break;
 				
 			}
 		});
-		$form->setTitle("§l§6Liste Des Serveurs");
-		$form->setContent("§l§aChoisi ton serveur !");
-		$form->addButton("§e Faction 1", 0, "textures/items/gold_sword.png");
-		$form->addButton("§3 Faction 2", 0, "textures/items/diamond_sword.png");
-  $form->addButton("§d Minage", 0, "textures/items/gold_pickaxe.png");
+		$form->setTitle("$this->cfg->get("titre")");
+		$form->setContent("$this->cfg->get("content")");
+		$form->addButton("$this->cfg->get("button1")", 0, "textures/items/gold_sword.png");
+		$form->addButton("$this->cfg->get("button2")", 0, "textures/items/diamond_sword.png");
+                $form->addButton("$this->cfg->get("button3")", 0, "textures/items/gold_pickaxe.png");
 		$form->sendToPlayer($sender);
 			return $form;
 	} 
