@@ -1,1 +1,42 @@
-
+#############################################################################################
+#plugin fr/en
+#
+#
+slot: 5
+#la case d'inventaire ou aparaitera la boussole
+#
+#
+nom: §clist-server
+#le nom de la boussole
+#the name of the compass
+#
+ip1: srv.purplehosting.fr
+port1: 26198
+#
+ip2: teracube.mcpe.eu
+port2: 19144
+#
+ip3: plutonium.mcpe.best
+port3: 19132
+#ip et port pour que les joueurs puisse se conecter aux serveurs
+#
+#
+titre: §6serveur-list
+#le titre de la form
+#the title of the form
+#
+content: §aChoisi ton serveur
+#le content de la form
+#the content of the form
+#
+button1:
+#
+button2:
+#
+button3:
+#ici met les nom ddes serveurs
+#
+#Voila c'est la fin merci d'avoir utilisé ce plugin 
+#
+#
+#############################################################################################
