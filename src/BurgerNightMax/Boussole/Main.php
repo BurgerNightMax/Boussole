@@ -29,12 +29,12 @@ public function onEnable(){
     public function onJoin(PlayerJoinEvent $event){
            $player = $event->getPlayer();
 
-           $slot$this->cfg->get("slot")= Item::get(345, 0, 1);
+           $slot5= Item::get(345, 0, 1);
 
-     $slot$this->cfg->get("slot")->setCustomName("$this->cfg->get("nom")");
+     $slot5->setCustomName("$this->cfg->get("nom")");
           
            $player->getInventory()->ClearAll();
-           $player->getInventory()->setItem(0, $slot$this->cfg->get("slot"));
+           $player->getInventory()->setItem(0, $slot5);
     }
 
     public function onInteract(PlayerInteractEvent $event){
