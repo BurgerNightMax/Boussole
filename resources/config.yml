@@ -2,10 +2,6 @@
 #plugin fr/en
 #
 #
-slot: 5
-#la case d'inventaire ou aparaitera la boussole
-#
-#
 nom: §clist-server
 #le nom de la boussole
 #the name of the compass
